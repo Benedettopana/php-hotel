@@ -60,13 +60,9 @@ if(isset($_POST['preferenza']) && !empty($_POST['preferenza'])){
         array_push($newHotel, $element);
     }
   }
-  
-// var_dump($newHotel);
 
 }
-
 // /SCELTA
-// var_dump($parking);
 ?>
 
 <!DOCTYPE html>
@@ -102,18 +98,16 @@ if(isset($_POST['preferenza']) && !empty($_POST['preferenza'])){
       </form>
     </div>
     <?php if(!empty($_POST['preferenza'])): ?>
-    <div class="row row-cols-2  justify-content-center ">
-    <?php 
-      foreach ($newHotel as $elements) :
-      ?>
-          <div class="col-5 my-3  hotel ">
-            <?php foreach ($elements as $key => $item ) : ?>
-              <h4><?php echo $key ?>: <?php echo $item ?></h4>
-            <?php endforeach ?>
-          </div>  
+      <div class="row row-cols-2  justify-content-center ">
+      <?php foreach ($newHotel as $elements) : ?>
+      <div class="col-5 my-3  hotel ">
+        <?php foreach ($elements as $key => $item ) : ?>
+          <h4><?php echo $key ?>: <?php echo $item ?></h4>
+        <?php endforeach ?>
+      </div>  
       <?php endforeach ?>
       </div>
-    </div>
+      </div>
     <?php endif ?>
   </div>
 </body>
