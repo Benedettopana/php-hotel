@@ -40,22 +40,24 @@ $hotels = [
 
 ];
 
-$preferenza = $_POST;
-$parking;
+// $preferenza = $_POST;
 $newHotel = [];
 // SCELTA
 if(isset($_POST['preferenza']) && !empty($_POST['preferenza'])){
   foreach($hotels as $element){
     if( $_POST['preferenza'] == '1'){
       if($element['parking']){
+        if($_POST['voto'] >= $element['vote'])
         array_push($newHotel, $element);
       }
       
     }else if($_POST['preferenza'] == '2'){
       if(!$element['parking'])
-      array_push($newHotel, $element);
+        if($_POST['voto'] >= $element['vote'])
+        array_push($newHotel, $element);
     }else{
-      array_push($newHotel, $element);
+      if($_POST['voto'] >= $element['vote'])
+        array_push($newHotel, $element);
     }
   }
   
@@ -89,6 +91,9 @@ if(isset($_POST['preferenza']) && !empty($_POST['preferenza'])){
           <option value="2">Senza</option>
           <option value="3">Indifferente</option>
         </select>
+
+        <label for="customRange3" class="form-label">Rating:</label>
+        <input type="range" class="form-range" min="0" max="5" step="1" id="customRange3" name="voto" value="5">
         <!-- BTN -->
         <div class="my-3">
           <button type="submit" class="btn btn-primary">Cerca</button>
