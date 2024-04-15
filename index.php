@@ -39,6 +39,8 @@ $hotels = [
   ],
 
 ];
+
+var_dump($hotels);
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +62,7 @@ $hotels = [
 </head>
 <body>
   <div class="container my-5">
-
+    <h1>prova titolo</h1>
   </div>
 </body>
 </html>
