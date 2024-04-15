@@ -40,7 +40,7 @@ $hotels = [
 
 ];
 
-var_dump($hotels);
+// var_dump($hotels);
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +62,18 @@ var_dump($hotels);
 </head>
 <body>
   <div class="container my-5">
-    <h1>prova titolo</h1>
+    <div class="row row-cols-2 ">
+    <?php 
+      foreach ($hotels as $elements) :
+      ?>
+      <div class="col my-3 ">
+          <?php foreach ($elements as $key => $item ) : ?>
+          <h4><?php echo $key ?>: <?php echo $item ?></h4>
+          <?php endforeach ?>
+        </div>
+      <?php endforeach ?>
+      </div>
+    </div>
   </div>
 </body>
 </html>
